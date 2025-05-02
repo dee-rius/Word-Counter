@@ -25,51 +25,52 @@ let storedInputDetails = {
     storedInstancesOfChosenWord: "..."
 }
 
-function countInstancesOfWord(){
-    splitByWords = userTextInput.value.split(" ");
-    wordToCount = wordToCountUserInput.value;
-    instancesOfChosenWord = 0;
+function countInstancesOfWord() {
+    if (userTextInput.value != "" && wordToCountUserInput.value != "") {
+        splitByWords = userTextInput.value.split(" ");
+        wordToCount = wordToCountUserInput.value;
+        instancesOfChosenWord = 0;
 
-    for(let word of splitByWords){
-        if(word.toLowerCase() == wordToCount.toLowerCase()){
-            instancesOfChosenWord ++;
+        for (let word of splitByWords) {
+            if (word.toLowerCase() == wordToCount.toLowerCase()) {
+                instancesOfChosenWord++;
+            }
         }
-    }
 
-    for(let outputText of outputTexts){
-        if(outputText.id == "instances-of-chosen-word"){
-            outputText.textContent = instancesOfChosenWord;
+        for (let outputText of outputTexts) {
+            if (outputText.id == "instances-of-chosen-word") {
+                outputText.textContent = instancesOfChosenWord;
+            }
         }
     }
 }
 
-function count(){
+function count() {
     numOfWords = 0;
     numofCharacters = 0;
 
     splitByWords = userTextInput.value.split(" ");
     splitByCharacters = userTextInput.value.split("");
 
-    for(let word of splitByWords){
-        numOfWords ++;
+    for (let word of splitByWords) {
+        numOfWords++;
     }
 
-    for(let character of splitByCharacters){
-        numofCharacters ++;
+    for (let character of splitByCharacters) {
+        numofCharacters++;
     }
 
-    for(let outputText of outputTexts){
-        if(outputText.id == "number-of-words")
-        {
+    for (let outputText of outputTexts) {
+        if (outputText.id == "number-of-words") {
             outputText.textContent = numOfWords;
         }
-        else if(outputText.id == "number-of-characters"){
+        else if (outputText.id == "number-of-characters") {
             outputText.textContent = numofCharacters;
         }
     }
 }
 
-function storeDetails(){
+function storeDetails() {
 
 }
 
