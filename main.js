@@ -1,15 +1,4 @@
-const para = document.querySelector("p");
+const textarea = document.querySelector("textarea");
 
-let parawords = para.innerHTML.split(" ");
-console.log(parawords);
+textarea.addEventListener('change', () => {console.log(textarea.value.split(" "));});
 
-let wordCount = 0;
-for(paraword of parawords)
-{
-  if(paraword.toLowerCase() == "word")
-  {
-    wordCount++;
-  }
-}
-
-console.log(wordCount);

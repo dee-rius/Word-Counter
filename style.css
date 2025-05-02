@@ -1,3 +1,97 @@
-body {
-    font-size: 15pt;
+
+:root{
+    --radius: 10px;
+    --interactable-color: hsla(0,0%,50%,0.25); 
+}
+
+::selection{
+    background-color: black;
+    color: white;
+}
+
+::-moz-selection{
+    background-color: black;
+    color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: calc(100vh * 0.03);
+
+    justify-content: center;
+}
+
+div{
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+button{
+    border-style: none;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+
+    background-color:  var(--interactable-color);
+
+    cursor: pointer;
+}
+
+input, textarea{
+    field-sizing: content;
+
+    border-style: none;
+    border-radius: var(--radius);
+
+    padding: 8px;
+}
+input:focus, textarea:focus{
+    outline-color: transparent;
+}
+
+#everything{
+    max-width: 500px;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#word-to-count-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+/*search bar input*/
+#word-to-count-input{
+    width: 80%;
+}
+#search-button{
+    margin-left: auto;
+}
+
+#text-input{
+    resize: none;
+    width: 97%; /*to prevent it from appearing to blead out */
+}
+
+
+#output-block{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    color: hsla(0,0%,50%,0.8);
+}
+
+
+.has-transtiton{
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+.can-be-focussed:hover{
+    box-shadow: 0 0 4px 2px var(--interactable-color);
 }
