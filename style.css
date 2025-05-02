@@ -68,7 +68,7 @@ input:focus, textarea:focus{
 #word-to-count-input{
     width: 80%;
 }
-#search-button{
+#count-button{
     margin-left: auto;
 }
 

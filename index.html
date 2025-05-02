@@ -16,13 +16,13 @@
     <main>
       <div id="word-to-count-bar" class="can-be-focussed has-transition">
         <input type="text" name="word-to-count" id="word-to-count-input" placeholder="Word to count..."> 
-        <button id="search-button">Count</button>
+        <button id="count-button">Count</button>
       </div>
       <textarea name="text-input" id="text-input" placeholder="Type text here..."  class="can-be-focussed has-transition"></textarea>
       <div id="output-block">
-        <p>Words: <span class="output-text">...</span></p>
-        <p>Characters: <span class="output-text">...</span></p>
-        <p>Instance(s) of word: <span class="output-text">...</span></p>
+        <p>Words: <span class="output-text" id="number-of-words">...</span></p>
+        <p>Characters: <span class="output-text" id="number-of-characters">...</span></p>
+        <p>Instance(s) of word: <span class="output-text" id="instances-of-chosen-word">...</span></p>
       </div>
     </main>
   </div>
