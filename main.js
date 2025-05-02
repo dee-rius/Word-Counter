@@ -32,7 +32,7 @@ function countInstancesOfWord() {
         instancesOfChosenWord = 0;
 
         for (let word of splitByWords) {
-            if (word.toLowerCase() == wordToCount.toLowerCase()) {
+            if (word.toLowerCase().includes(wordToCount.toLowerCase())) {
                 instancesOfChosenWord++;
             }
         }
