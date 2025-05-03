@@ -1,11 +1,12 @@
 const wordToCountUserInput = document.getElementById("word-to-count-input");
+wordToCountUserInput.addEventListener("change", storeDetails);
 let wordToCount = "";
 
 const countButton = document.getElementById("count-button");
 countButton.addEventListener('click', countInstancesOfWord);
 
 const userTextInput = document.getElementById("text-input");
-userTextInput.addEventListener("change", count)
+userTextInput.addEventListener("change", count);
 
 const outputTexts = Array.from(document.getElementsByClassName("output-text"));
 
@@ -42,8 +43,6 @@ function countInstancesOfWord() {
                 outputText.textContent = instancesOfChosenWord;
             }
         }
-
-        storeDetails();
     }
     else if (userTextInput.value == "") {
         for (let outputText of outputTexts) {
@@ -89,7 +88,7 @@ function storeDetails() {
 }
 
 function retriveAndDisplayStoredDetails() {
-    let storedInputDetails = JSON.parse(localStorage.getItem('storedInputValues'));
+    storedInputDetails = JSON.parse(localStorage.getItem('storedInputValues'));
 
     wordToCountUserInput.value = storedInputDetails.storedWordToCountInput;
     userTextInput.value = storedInputDetails.storedTextInput;
