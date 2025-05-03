@@ -14,12 +14,12 @@
     <h1>Word Counter</h1>
     
     <main>
-      <div id="word-to-count-bar" class="can-be-focussed has-transition">
+      <div id="word-to-count-bar" class="can-be-focussed has-transition enter-anim" style="--order: 1">
         <input type="text" name="word-to-count" id="word-to-count-input" placeholder="Word to count..."> 
-        <button id="count-button">Count</button>
+        <button id="count-button" class="has-transition">Count</button>
       </div>
-      <textarea name="text-input" id="text-input" placeholder="Type text here..."  class="can-be-focussed has-transition"></textarea>
-      <div id="output-block">
+      <textarea name="text-input" id="text-input" placeholder="Type text here..." style="padding: 8px; --order:2;" class="can-be-focussed has-transition enter-anim"></textarea>
+      <div id="output-block" style="--order: 3" class="enter-anim">
         <p><span class="output-text" id="number-of-words">...</span> words</p>
         <p><span class="output-text" id="number-of-characters">...</span> characters</p>
         <p><span class="output-text" id="instances-of-chosen-word">...</span> words contain desired text</p>

@@ -1,6 +1,18 @@
+@keyframes enter-anim{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
 
 :root{
-    --radius: 10px;
+    --radius: 15px;
     --interactable-color: hsla(0,0%,50%,0.25); 
 }
 
@@ -24,17 +36,22 @@ main{
 
 div{
     width: 100%;
+    padding: 2px;
     border-radius: var(--radius);
 }
 
 button{
     border-style: none;
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
+    /* border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius); */
 
-    background-color:  var(--interactable-color);
+    background-color: transparent;
+    color:  hsla(0,0%,50%,0.8);
 
     cursor: pointer;
+}
+button:hover{
+    color: hsla(0,0%,20%, 1);
 }
 
 input, textarea{
@@ -43,7 +60,7 @@ input, textarea{
     border-style: none;
     border-radius: var(--radius);
 
-    padding: 8px;
+    padding: 6px;
 }
 input:focus, textarea:focus{
     outline-color: transparent;
@@ -94,4 +111,9 @@ input:focus, textarea:focus{
 
 .can-be-focussed:hover{
     box-shadow: 0 0 4px 2px var(--interactable-color);
+}
+
+.enter-anim{
+    opacity: 0;
+    animation: enter-anim 0.3s ease-out calc(0.3s * var(--order)) 1 normal forwards;
 }

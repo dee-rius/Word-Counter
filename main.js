@@ -19,10 +19,10 @@ let instancesOfChosenWord = 0;
 let storedInputDetails = {
     storedWordToCountInput: "",
     storedTextInput: "",
+}
 
-    storedNumOfWords: "...",
-    storedNumOfCharacters: "...",
-    storedInstancesOfChosenWord: "..."
+if (localStorage.getItem('storedInputValues') != null) {
+    retriveAndDisplayStoredDetails();
 }
 
 function countInstancesOfWord() {
@@ -42,6 +42,13 @@ function countInstancesOfWord() {
                 outputText.textContent = instancesOfChosenWord;
             }
         }
+
+        storeDetails();
+    }
+    else if (userTextInput.value == "") {
+        for (let outputText of outputTexts) {
+            outputText.innerHTML = "...";
+        }
     }
 }
 
@@ -49,15 +56,17 @@ function count() {
     numOfWords = 0;
     numofCharacters = 0;
 
-    splitByWords = userTextInput.value.split(" ");
-    splitByCharacters = userTextInput.value.split("");
+    if (userTextInput.value != "") {
+        splitByWords = userTextInput.value.split(" ");
+        splitByCharacters = userTextInput.value.split("");
 
-    for (let word of splitByWords) {
-        numOfWords++;
-    }
+        for (let word of splitByWords) {
+            numOfWords++;
+        }
 
-    for (let character of splitByCharacters) {
-        numofCharacters++;
+        for (let character of splitByCharacters) {
+            numofCharacters++;
+        }
     }
 
     for (let outputText of outputTexts) {
@@ -68,9 +77,24 @@ function count() {
             outputText.textContent = numofCharacters;
         }
     }
+
+    storeDetails();
 }
 
 function storeDetails() {
+    storedInputDetails.storedWordToCountInput = wordToCountUserInput.value;
+    storedInputDetails.storedTextInput = userTextInput.value;
 
+    localStorage.setItem('storedInputValues', JSON.stringify(storedInputDetails));
+}
+
+function retriveAndDisplayStoredDetails() {
+    let storedInputDetails = JSON.parse(localStorage.getItem('storedInputValues'));
+
+    wordToCountUserInput.value = storedInputDetails.storedWordToCountInput;
+    userTextInput.value = storedInputDetails.storedTextInput;
+
+    count();
+    countInstancesOfWord();
 }
 
