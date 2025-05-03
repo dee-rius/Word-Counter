@@ -123,7 +123,7 @@ P{
 }
 
 .can-be-focussed:hover{
-    box-shadow: 0 0 4px 2px var(--interactable-color);
+    box-shadow: 0 0 6px 2px var(--interactable-color);
 }
 
 .enter-anim{
