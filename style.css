@@ -42,6 +42,7 @@ div{
 
 button{
     border-style: none;
+    position: relative;
     /* border-top-right-radius: var(--radius);
     border-bottom-right-radius: var(--radius); */
 
@@ -52,9 +53,6 @@ button{
 }
 button:hover{
     color: hsla(0,0%,20%, 1);
-}
-button:active{
-    color: var(--interactable-color);
 }
 
 input, textarea{
@@ -80,7 +78,7 @@ P{
 
 
 #everything{
-    max-width: 500px;
+    width: clamp(150px, 350px, 500px);
     margin-left: auto;
     margin-right: auto;
 
@@ -122,7 +120,7 @@ P{
     transition-duration: 0.3s;
 }
 
-.can-be-focussed:hover{
+.can-be-focussed{
     box-shadow: 0 0 6px 2px var(--interactable-color);
 }
 
